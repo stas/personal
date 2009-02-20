@@ -1,0 +1,405 @@
+/*
+Theme Name: Libertine
+Theme URI: http://stas.nerd.ro/
+Description: Open your mind! Thanks to codeboost, peer2soul and crazybyte.
+Version: 1.0
+Author: Stas Sushkov
+Tags: minimalistic, fluid width, one column, widgets, customizable
+
+This is just a basic layout, with only the bare minimum defined.
+Use theme control panel for making it unique!
+*/
+
+html, body {
+	background-color: #FFFFFF;
+	background-image: url("img/53430.png");
+	margin: 0;
+	padding: 0;
+	color: #31312F;
+	height: 100%;
+	font-family:"Helvetica Neue","Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	font-size: 12px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #5BAF4B;
+	font-family: Georgia;
+	font-weight: normal;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	color: #5BAF4B;
+}
+
+h1 {
+	font-size: 3em;
+	line-height: 1;
+	margin-bottom: 0.5em;
+}
+
+h2 {
+	font-size:2em;
+	margin-bottom:0.75em;
+}
+
+h2 a{
+	text-decoration: none;
+}
+
+h3 {
+	font-size: 1.5em;
+	line-height: 1;
+	margin-bottom: 1em;
+}
+
+h4 {
+	font-size: 1.2em;
+	line-height: 1.25;
+	margin-bottom: 1.25em;
+}
+
+h5 {
+	font-size:1em;
+	font-weight:bold;
+	margin-bottom:1.5em;
+}
+
+h6 {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+a {
+	color: #1997D1;
+	text-decoration: underline;
+}
+
+a:focus, a:hover {
+	color: #6D6A5B;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #6D6A5B;
+}
+
+p {
+	margin: 0pt 0pt 1.5em;
+}
+
+img {
+	margin: 0pt 0pt 1.5em;
+}
+
+ul, ol {
+	margin: 0pt 2em;
+	padding: 0 1.5em;
+}
+
+ul {
+	list-style-type:circle;
+}
+
+ol {
+	list-style-type:decimal;
+}
+
+dl {
+margin:0pt 0pt 1.5em;
+}
+
+dl dt {
+	font-weight:bold;
+}
+
+dd {
+	margin-left:1.5em;
+}
+
+abbr, acronym {
+	border-bottom:1px dotted #666666;
+}
+
+address {
+	font-style:italic;
+	margin-top:1.5em;
+}
+
+del {
+	color:#666666;
+}
+
+blockquote {
+	color:#666666;
+	font-style:italic;
+	margin:1.5em;
+}
+
+strong {
+	font-weight:bold;
+}
+em, dfn {
+	background:#FFFFCC none repeat scroll 0%;
+	font-style:italic;
+}
+
+dfn {
+	font-weight:bold;
+}
+
+pre, code {
+	margin:1.5em 0pt;
+	white-space:pre;
+}
+
+pre, code, tt {
+	font-family:'andale mono','monotype.com','lucida console',monospace;
+	font-size:1em;
+	font-size-adjust:none;
+	font-stretch:normal;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.5;
+}
+
+tt {
+	display:block;
+	line-height:1.5;
+	margin:1.5em 0pt;
+}
+
+table {
+	margin-bottom:1.4em;
+}
+
+th {
+	border-bottom:2px solid #CCCCCC;
+	font-weight:bold;
+}
+
+td {
+	border-bottom:1px solid #DDDDDD;
+}
+
+th, td {
+	padding:4px 10px 4px 0pt;
+}
+
+tfoot {
+	font-style:italic;
+}
+
+caption {
+	background:#FFFFCC none repeat scroll 0%;
+}
+
+
+
+#page {
+	width: 80%;
+	margin: auto;
+	background-color: #FFF;
+}
+
+#banner a:visited {
+	color: #5BAF4B;
+}
+
+#banner a {
+	text-decoration: none;
+}
+#banner {
+	padding: 20px;
+	background: url("img/logo.jpg") no-repeat left;
+	background-position: 10%;
+	clear:both;
+}
+
+#banner form {
+	display: inline;
+	float: right;
+}
+
+#banner h1, #banner h4 {
+	margin-left: 20%;
+}
+
+#banner h4 {
+	font-style: italic;
+	margin-top: -10px;
+}
+
+#menu {
+	width: 90%;
+	margin: auto;
+	border-top: 1px solid #5BAF4B;
+	border-bottom: 1px solid #5BAF4B;
+	clear:both;
+	text-align: center;
+}
+
+#menu ul {
+	text-align: center;
+	margin: 2px 0;
+	padding: 0;
+	display: inline;
+}
+
+#menu ul li{
+	display: inline;
+	padding: 5px;
+	font-size: 1.05em;
+	font-variant: small-caps;
+}
+
+#menu ul li a {
+	text-decoration: none;
+	padding: 0 2px;
+}
+
+#menu ul li a:hover {
+	border-bottom: 3px solid #5BAF4B;
+}
+
+#content {
+	width: 85%;
+	margin: auto;
+}
+
+#content .clear {
+	width: 100%;
+	clear: both;
+}
+
+#content h2 {
+	margin: 5px 0;
+}
+
+#content h5 {
+	text-align: right;
+	margin: 2px 0;
+}
+
+#content .page img.clean, #content .page a:hover img.clean, #content .post img.clean, #content .post a:hover img.clean {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#content .post-content {
+	margin: 10px 0 15px; 
+}
+
+#content .post-content p img.aligncenter, #content .post-content p img.aligncenter {
+	float: none;
+	display: block;
+	margin: 10px auto;
+}
+
+#content .post-content p img.alignleft, #content .post-content p img.alignleft {
+	float: left;
+	display: inline;
+}
+
+#content .post-content p img.alignright, #content .post-content p img.alignright {
+	float: right;
+	display: inline;
+}
+
+#content .post-content p img, #content .page-content p img {
+	margin: 10px;
+	padding: 3px;
+	border: 1px solid #5BAF4B;
+}
+
+#content .post-content p a img, #content .page-content p a img {
+	border: 1px solid #1997D1;
+}
+
+#content .post-content p a:hover img, #content .page-content p a:hover img {
+	border: 1px solid #5BAF4B;
+	background-color: #EEEEEE; 
+}
+
+
+#content .post-block {
+	width: 45%;
+	display: block;
+	overflow: hidden;
+}
+
+#content .align {
+	float: right;
+	clear: both;
+}
+
+#navigation {
+	text-align: center;
+	clear: both;
+	margin: 30px 0 40px;
+	font-size: 1.2em;
+}
+
+#widgets {
+	width: 90%;
+	margin: auto;
+	border-top: 1px solid #5BAF4B;
+	border-bottom: 1px solid #5BAF4B;
+	clear:both;
+}
+
+#widgets .clear {
+	clear: both;
+}
+
+#widgets #widget-left {
+	width: 25%;
+	margin-left: 5%;
+	overflow: hidden;
+}
+
+#widgets #widget-right {
+	width: 25%;
+	margin-right: 5%;
+	float: right;
+}
+
+#widgets #widget-middle {
+	width: 25%;
+	margin-right: 5%;
+	float: right;
+}
+
+#footer {
+	width: 40%;
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+	clear:both;
+}
+
+.rsswidget img {
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+#commentlist li {
+	border-left: 1px solid #5BAF4B;
+	padding-left: 5px;
+	margin: 5px;
+}
+
+.avatar {
+	float: right;
+	margin: 10px;
+	padding: 3px;
+	border: 1px solid #5BAF4B;
+	display: inline;
+}
+
+.members {
+	float: right;
+	margin: 10px;
+}

@@ -1,0 +1,70 @@
+#calendar {
+        width: 200px;
+        font-size: 10px;
+        float: left;
+}
+
+#calendar h2 {
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+}
+
+#calendar .dp-nav-prev, #calendar .dp-nav-next {
+        display: inline;
+}
+
+#calendar .dp-nav-prev {
+        float: left;
+}
+
+#calendar .dp-nav-next {
+        float: right;
+}
+
+#calendar .dp-nav-prev a, #calendar .dp-nav-next a{
+        padding: 0 2px;
+}
+
+table.jCalendar {
+        border: 1px solid #999;
+        background: #eee;
+        border-collapse: separate;
+        border-spacing: 2px;
+}
+table.jCalendar th {
+	background: #eee;
+	color: #999;
+	font-weight: normal;
+	padding: 3px 5px;
+}
+table.jCalendar td {
+	background: #eee;
+	color: #666;
+	padding: 3px 5px;
+	text-align: center;
+}
+table.jCalendar td.other-month {
+	background: #ddd;
+	color: #aaa;
+}
+table.jCalendar td.today {
+	color: #666;
+        font-weight: bold;
+}
+table.jCalendar td.selected {
+	background: #f66;
+	color: #fff;
+}
+table.jCalendar td.selected:hover {
+	background: #f33;
+	color: #fff;
+}
+table.jCalendar td:hover, table.jCalendar td.dp-hover {
+	background: #fff;
+	color: #000;
+}
+table.jCalendar td.disabled, table.jCalendar td.disabled:hover {
+	background: #bbb;
+	color: #888;
+}

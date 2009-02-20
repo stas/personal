@@ -1,0 +1,27 @@
+body {fwidth: expression(document.body.clientWidth<766 ? "766px" : "100%"); min-width:766px}
+site_center1 {width: expression(document.body.clientWidth<766 ? "766px" : "100%"); min-width:766px}
+
+
+.w{ width:100%; width: expression(document.body.clientWidth<766 ? "766px" : "100%"); min-width:766px; background:url(/images/bg.gif) repeat-x top center}
+.site_center{text-align:center; width:100%; background:url(/images/bg2.gif) repeat-x bottom}
+/*======= width =======*/
+.site_center1{margin:0 auto; text-align:left; width:766px; }
+
+/*======= header =======*/
+#header {height:260px;  background:url(/images/bg_top.jpg) no-repeat bottom  right; text-align:center; width:766px; margin:0 auto}
+
+.col1, .col2, .col3, .col4, .col5 {float:left}
+
+
+#page3 #content .col1{ width:210px}
+#page3 #content .col2{ width:506px}
+#page3 #content .col4{ width:51%}
+#page3 #content .col5{ width:47%}
+
+#page3_2 #content .col1{ width:1%}
+#page3_2#content .col2{ width:99%}
+#page3_2#content .col4{ width:51%}
+#page3_2#content .col5{ width:47%}
+
+/*======= footer =======*/
+#footer { height:160px; }

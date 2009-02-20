@@ -1,0 +1,82 @@
+body{
+padding:0px;
+margin:0px;
+background-color:#FFFFFF;
+}
+a:hover{text-decoration:none;}
+
+
+
+.m_text, td, input, textarea, a, li
+	{
+		font-family:Tahoma;
+		font-size:11px;
+		line-height:13px;
+		color:#9D9D9D;
+		text-align:justify;
+	}
+	
+span { color:#7FAE1F; font-weight:bold;}
+
+strong a { color:#6C6C6C; font-weight:normal;}
+	
+span a { color:#FF5A00; margin-right:5px; font-weight:normal; line-height:11px}
+	
+.c_text	{ font-size:9px; color:#CECECE;}
+
+.c_text a { font-size:9px; color:#CECECE; text-decoration:none;}
+
+.c_text a:hover{ text-decoration:underline;}
+
+.ls a { text-decoration:none}
+
+.ls a:hover { text-decoration:underline}
+
+.dotted_line { height:1px; background-image:url(images/p-h-dr.gif); background-repeat:repeat-x;}
+
+.line { background-image:url(images/h-l.gif); background-repeat:repeat-x; height:4px}
+
+.headers { height:32px; background-color:#F4F4F4}
+
+.headers1 { height:32px; background-color:#F4F4F4; background-image:url(images/p.gif); background-repeat:repeat-x; background-position:bottom; display:table; width:100%}
+
+.headers1 a { text-transform:uppercase; color:#848484; text-decoration:none; margin-left:19px; margin-right:5px}
+
+.headers1 a:hover { text-decoration:underline}
+
+.box { margin:29px 15px 10px 21px}
+
+.no_class, form, .no_class td
+	{
+		width:auto;
+		height:auto;
+		margin:0px;
+		padding:0px;
+		border:0px;
+		color: default;
+	}
+
+.form
+	{
+		height:22px; margin-top:0px;
+	}	
+
+.form input
+	{
+		width:192px; height:19px; border-color:#DADADA; border-width:1px; background-color:#ffffff; border-style:solid; padding-left:5px
+	}
+
+textarea{
+		width:205px; height:121px; overflow:hidden; border-color:#DADADA; border-width:1px; background-color:#ffffff; border-style:solid; padding-left:5px
+	}
+
+ul {margin:0; padding:0; list-style:none}
+li {background:url(images/a.gif) no-repeat left center; margin: 0px 0px 0px 0px; padding:0px 0px 0px 12px}		
+
+li a, ul
+	{
+		font-family:Tahoma;
+		font-size:11px;
+		line-height:18px;
+		color:#9D9D9D;		
+	}

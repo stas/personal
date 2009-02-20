@@ -1,0 +1,1 @@
+<?php pr($ldap_user['LdapUser']) ?>
