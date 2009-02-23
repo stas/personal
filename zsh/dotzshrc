@@ -16,7 +16,7 @@
 [[ -z "$PS1" ]] && return
 
 # Set prompt (white and purple, nothing too fancy)
-PS1=$'%{\e[0;37m%}%B%*%b %{\e[0;35m%}%m:%{\e[0;37m%}%~ %(!.#.>) %{\e[00m%}'
+PS1=$'%{\e[0;37m%}%* %{\e[1;36m%}%n@%m:%{\e[0;37m%}% %{\e[0;31m%}%~ %{\e[1;36m%}%(!.#.>)% %{\e[00m%}'
 
 # Set less options
 if [[ -x `which less` ]]
@@ -33,7 +33,7 @@ fi
 # Set default editor
 if [[ -x `which emacs` ]]
 then
-    export EDITOR="emacs"
+    export EDITOR="vim"
     export USE_EDITOR=$EDITOR
     export VISUAL=$EDITOR
 fi
@@ -93,11 +93,7 @@ alias 'j=jobs -l'
 alias 'kw=kwrite'
 alias 'tf=tail -f'
 alias 'grep=grep --colour'
-alias 'e=emacs -nw --quick'
-
-# Useful KDE integration (see later for definition of z)
-alias 'k=z kate -u' # -u is reuse existing session if possible
-alias 'q=z kfmclient openURL' # Opens (or executes a .desktop) arg1 in Konqueror
+alias 'v=vim'
 
 # These are useful with the Dvorak keyboard layout
 alias 'h=ls'
@@ -163,32 +159,12 @@ zz () {
 
 # Aliases to use this
 # Use e.g. 'command gv' to avoid
-alias 'acroread=z acroread'
-alias 'amarok=z amarok'
-alias 'azureus=z azureus'
-alias 'easytag=z easytag'
-alias 'eclipse=z eclipse'
 alias 'firefox=z firefox'
-alias 'icedove=z icedove'
-alias 'gaim=z gaim'
 alias 'gimp=z gimp'
-alias 'gpdf=z gpdf'
 alias 'gv=z gv'
-alias 'k3b=z k3b'
-alias 'kate=z kate'
-alias 'kmail=z kmail'
-alias 'konqueror=z konqueror'
-alias 'konsole=z konsole'
-alias 'kontact=z kontact'
-alias 'kopete=z kopete'
-alias 'kpdf=z kpdf'
-alias 'kwrite=z kwrite'
 alias 'ooffice=z ooffice'
 alias 'oowriter=z oowriter'
-alias 'opera=z opera'
 alias 'pan=z pan'
-alias 'sunbird=z sunbird'
-alias 'thunderbird=z thunderbird'
 
 # Quick find
 f() {
@@ -212,102 +188,6 @@ chpwd() {
     esac
 }
 
-# For changing the umask automatically
-# Maybe I should be using chpwd for this.
-umask 0077
-cd() {
-    builtin cd $*
-
-    # Private folders
-    if [[ -z ${~PWD:#${HOME}/documents*} ||
-	  -z ${~PWD:#${HOME}/imperial*}  ||
-	  -z ${~PWD:#${HOME}}            ||
-	  -z ${~PWD:#${HOME}/zo*}        ]]
-    then
-        if [[ $(umask) -ne 077 ]]
-	then
-            umask 0077
-            echo -e "\033[01;32mUmask: private \033[m"
-	fi
-    else
-	# Web permissions
-        if [[ -z ${~PWD:#/web*}                ||
-              -z ${~PWD:#/matt/web*}           ||
-	      -z ${~PWD:#${HOME}/web*}         ]]
-	then
-	    if [[ $(umask) -ne 072 ]]
-	    then
-                umask 0072
-                echo -e "\033[01;33mUmask: other readable \033[m"
-	    fi
-        else
-	    # Group writable permissions
-	    if [[ -z ${~PWD:#/vol/linux*}      ||
-		  -z ${~PWD:#/vol/project*}    ||
-		  -z ${~PWD:#/vol/source*}     ||
-		  -z ${~PWD:#/home/blissett*}  ]]
-	    then
-                if [[ $(umask) -ne 002 ]]
-		then
-		    umask 0002
-		    echo -e "\033[01;35mUmask: group writable \033[m"
-                fi
-	    else
-		# World readable
-                if [[ $(umask) -ne 022 ]]
-		then
-		    umask 0022
-		    echo -e "\033[01;31mUmask: world readable \033[m"
-                fi
-	    fi
-        fi
-    fi
-
-}
-cd . &> /dev/null
-
-# For quickly plotting data with gnuplot.  Arguments are files for 'plot "<file>" with lines'.
-plot () {
-    echo -n '(echo set term png; '
-    echo -n 'echo -n plot \"'$1'\" with lines; '
-    for i in $*[2,$#@]; echo -n 'echo -n , \"'$i'\" with lines; '
-    echo 'echo ) | gnuplot | display png:-'
-
-    (
-	echo "set term png"
-	echo -n plot \"$1\" with lines
-	for i in $*[2,$#@]; echo -n "," \"$i\" "with lines"
-	) | gnuplot | display png:-
-}
-# Persistant gnuplot (can be resized etc)
-plotp () {
-    echo -n '(echo -n plot \"'$1'\" with lines; '
-    for i in $*[2,$#@]; echo -n 'echo -n , \"'$i'\" with lines; '
-    echo 'echo ) | gnuplot -persist'
-
-    (
-	echo -n plot \"$1\" with lines
-	for i in $*[2,$#@]; echo -n "," \"$i\" "with lines"
-	echo
-	) | gnuplot -persist
-}
-
-# CD into random directory in PWD
-cdrand () {
-	all=( *(/) )
-	rand=$(( 1 + $RANDOM % $#all ))
-	cd $all[$rand]
-}
-
-# Print some stuff
-if [[ -x `which date` ]]; then
-    date
-    echo
-fi
-if [[ -x `which fortune` ]]; then
-    fortune -a 2> /dev/null
-fi
-
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _expand _complete _match
 zstyle ':completion:*' completions 0
@@ -325,7 +205,6 @@ compinit
 # End of lines added by compinstall
 
 zstyle -d users
-#zstyle ':completion:*' users mrb04 matt
 zstyle ':completion:*:*:*:users' ignored-patterns \
     adm apache bin daemon games gdm halt ident junkbust lp mail mailnull \
     named news nfsnobody nobody nscd ntp operator pcap postgres radvd \
@@ -333,7 +212,7 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
     dictd  gnats  identd  irc  man  messagebus  postfix  proxy  sys  www-data \
     avahi Debian-exim hplip list cupsys haldaemon ntpd proftpd statd
 
-zstyle ':completion:*' hosts $(<$HOME/.hosts)
+#zstyle ':completion:*' hosts $(<$HOME/.hosts)
 
 zstyle ':completion:*:cd:*' ignored-patterns '(*/)#lost+found'
 
@@ -351,35 +230,6 @@ zstyle ':completion:*:cd:*' ignored-patterns '(*/)#CVS'
 zstyle ':completion:*:*:xdvi:*' file-sort time
 
 autoload zsh/sched
-
-# Copys word from earlier in the current command line
-# or previous line if it was chosen with ^[. etc
-autoload copy-earlier-word
-zle -N copy-earlier-word
-bindkey '^[,' copy-earlier-word
-
-# Cycle between positions for ambigous completions
-autoload cycle-completion-positions
-zle -N cycle-completion-positions
-bindkey '^[z' cycle-completion-positions
-
-# Increment integer argument
-autoload incarg
-zle -N incarg
-bindkey '^X+' incarg
-
-# Write globbed files into command line
-autoload insert-files
-zle -N insert-files
-bindkey '^Xf' insert-files
-
-# Play tetris
-autoload -U tetris
-zle -N tetris
-bindkey '^X^T' tetris
-
-# xargs but zargs
-autoload -U zargs
 
 # Calculator
 autoload zcalc
@@ -415,6 +265,3 @@ then
     . $HOME/.zshrc-$HOST
 fi
 
-# Get round annoyance in Gentoo
-# (No idea if this is needed any more)
-source $HOME/.zshenv
