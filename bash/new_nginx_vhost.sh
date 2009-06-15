@@ -60,7 +60,6 @@ else
 		exit 0
 	else
 		mkdir -vp $DOCROOT/$DOMAIN
-		mkdir -vp $LOGSDIR/$DOMAIN
 		touch $LOGSDIR/$DOMAIN.access.log 
 		echo "Created $LOGSDIR/$DOMAIN.access.log"
 
