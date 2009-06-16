@@ -20,11 +20,11 @@ cat <<- _EOF_
 server {
         listen          80;
         server_name     $DOMAIN www.$DOMAIN;
-	access_log	/var/log/nginx/$DOMAIN.access.log
+        access_log	/var/log/nginx/$DOMAIN.access.log;
 
-	#
-	# Uncomment if you're using fastcgi
-	#
+        #
+        # Uncomment if you're using fastcgi
+        #
         #location ~ \.php$ {
         #         fastcgi_pass   127.0.0.1:9000;
         #         fastcgi_index  index.php;
