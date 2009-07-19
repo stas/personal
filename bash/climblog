@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# CLI microblogging tool.
+# $cat ~/.identica
+# username:pass
+
+# For Twitter
+#A=`cat ~/.twitter`
+#curl --basic --user "$A" --data-ascii "status=`echo $@|tr ' ' '+'`" "http://twitter.com/statuses/update.json" > /tmp/twitter.log 2>&1
+
+# For Identi.ca
+A=`cat ~/.identica`
+curl --basic --user "$A" --data-ascii "status=`echo $@|tr ' ' '+'`" "http://identi.ca/api/statuses/update.xml" > /tmp/identica.log 2>&1
+
+echo "OK"
