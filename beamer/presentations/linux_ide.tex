@@ -1,0 +1,274 @@
+\documentclass[compress]{beamer}
+
+\usepackage{listings}
+\usepackage{hyperref}
+
+%\usetheme{OHS}
+\usetheme[dark,framenumber]{OHS}
+%\usetheme[darktitle,framenumber]{OHS}
+
+\title{Programare sub GNU/Linux}
+\subtitle{C\^{a}t de simplu poate fi?!}
+
+\author{Tomi\c{t}\u{a} Militaru (\href{mailto:tomita.militaru@sblug.ro}{tomita.militaru@sblug.ro})
+\\* \c{s}i
+\\* Stas Su\c{s}cov (\href{mailto:stas@sblug.ro}{stas@sblug.ro})}
+\date{Octomber 15th, 2009}
+
+\begin{document}
+
+% ----------------------------------------------------------------------------
+% *** Titlepage <<<
+% ----------------------------------------------------------------------------
+\maketitle
+% ----------------------------------------------------------------------------
+% *** END of Titlepage >>>
+% ----------------------------------------------------------------------------
+
+
+\section{Introducere}
+\subsection{Istoric}
+
+
+% ----------------------------------------------------------------------------
+% *** Frame <<<
+% ----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Ce \^{i}nseamn\u{a} Cod Liber?}
+\end{frame}
+% ----------------------------------------------------------------------------
+% *** END of Frame >>>
+% ----------------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------------
+% *** Frame <<<
+% ----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Ce \^{i}nseamn\u{a} Cod Liber?}
+
+\begin{itemize}
+    \item<1-> conceptul, de\c{s}i incomplet, a luat na\c{s}tere prin 1960
+    \item<2-> reprezint\u{a} un mod de via\c{t}\u{a} \c{s}i de a crea
+    \item<3-> a fost extins \c{s}i conturat de pasiona\c{t}ii de calculatoare
+    \item<4-> a motivat crearea “The GNU Project”, “Free Software Foundation” (FSF) \c{s}i a “GNU General Public License” (GPL)
+    \item<5-> adev\u{a}ratul gabarit a mi\c{s}c\u{a}rii s-a conturat prin 1990, odat\u{a} cu intrarea “Linux”-ului \^{i}n joc
+    \item<6-> momentan reprezint\u{a} una dintre cele mai puternice mi\c{s}c\u{a}ri sociale: “Open Source Initiative” (OSI)
+\end{itemize}
+
+\end{frame}
+% ----------------------------------------------------------------------------
+% *** END of Frame >>>
+% ----------------------------------------------------------------------------
+
+\subsection{Rezultate}
+
+% ----------------------------------------------------------------------------
+% *** Frame <<<
+% ----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Solu\c{t}ii libere de programare}
+
+\begin{exampleblock}{GCC}
+Colec\c{t}ia de compilatoare GNU.
+\end{exampleblock}
+
+\pause
+
+\begin{exampleblock}{GTK+}
+Sistem de dezvoltare a interfe\c{t}elor grafice (GNOME).
+\end{exampleblock}
+
+\pause
+
+\begin{exampleblock}{Qt}
+Sistem de dezvoltare a interfe\c{t}elor grafice (KDE).
+\end{exampleblock}
+
+\end{frame}
+% ----------------------------------------------------------------------------
+% *** END of Frame >>>
+% ----------------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------------
+% *** Frame <<<
+% ----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Solu\c{t}ii libere de programare}
+
+\begin{exampleblock}{PHP}
+Limbaj de programare interpretat orientat pentru aplica\c{t}ii web.
+\end{exampleblock}
+
+\pause
+
+\begin{exampleblock}{Python}
+Limbaj de programare interpretat orientat pentru aplica\c{t}ii de birou.
+\end{exampleblock}
+
+\pause
+
+\begin{exampleblock}{Java}
+Limbaj de programare obiectual foarte popular pentru aplica\c{t}ii de birou.
+\end{exampleblock}
+
+\pause
+
+\begin{exampleblock}{SQLite}
+Librarie portabil\u{a} \c{s}i mic\u{a}, ce ofer\u{a} suport pentru baze de date.
+\end{exampleblock}
+
+\end{frame}
+% ----------------------------------------------------------------------------
+% *** END of Frame >>>
+% ----------------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------------
+% *** Frame <<<
+% ----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Solu\c{t}ii libere de programare}
+
+\begin{exampleblock}{MinGW}
+Colec\c{t}ia de compilatoare GNU pentru Windows$^{\textregistered}$.
+\end{exampleblock}
+
+\pause
+
+\begin{exampleblock}{Mono}
+Alternativa liber\u{a} la proiectul .NET$^{\textregistered}$ \c{s}i C\#$^{\textregistered}$ de la Microsoft$^{\textregistered}$.
+\end{exampleblock}
+
+\pause
+
+\begin{exampleblock}{SVN}
+Sistem popular folosit la versionarea codului surs\u{a}.
+\end{exampleblock}
+
+\end{frame}
+% ----------------------------------------------------------------------------
+% *** END of Frame >>>
+% ----------------------------------------------------------------------------
+
+\section{Probleme \c{s}i solu\c{t}ii}
+\subsection{Inpactul}
+
+% ----------------------------------------------------------------------------
+% *** Frame <<<
+% ----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{\^{I}nsemn\u{a}tatea \^{i}n mediul educa\c{t}ional}
+
+\begin{itemize}
+    \item<1-> Ofer\u{a} posibilitatea de a \^{i}nv\u{a}\c{t}a pe baza experien\c{t}ei altora.
+    \item<2-> Ofer\u{a} libertatea de a \^{i}ncerca diferite limbaje de programare f\u{a}r\u{a} b\u{a}t\u{a}i de cap la configurare \c{s}i instalare.
+    \item<3-> Asigur\u{a} posibilitatea de a crea o carier\u{a} prin aprofundarea cuno\c{s}tin\c{t}elor despre un limbaj de programare.
+\end{itemize}
+
+\end{frame}
+% ----------------------------------------------------------------------------
+% *** END of Frame >>>
+% ----------------------------------------------------------------------------
+
+\subsection{Exemple}
+
+% ----------------------------------------------------------------------------
+% *** Frame <<<
+% ----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Exemplu de cod \^{i}n C}
+
+\begin{alertblock}{Mediul de programare Code::Blocks}
+\lstinputlisting[language=C,basicstyle=\ttfamily\footnotesize]{exemplu.c}
+\end{alertblock}
+
+\end{frame}
+% ----------------------------------------------------------------------------
+% *** END of Frame >>>
+% ----------------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------------
+% *** Frame <<<
+% ----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Exemplu de cod \^{i}n Python}
+
+\begin{alertblock}{Mediul de programare Geany}
+\lstinputlisting[language=Python,basicstyle=\ttfamily\tiny]{exemplu.py}
+\end{alertblock}
+
+\end{frame} 
+% ----------------------------------------------------------------------------
+% *** END of Frame >>>
+% ----------------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------------
+% *** Frame <<<
+% ----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Exemplu de cod \^{i}n HTML}
+
+\begin{alertblock}{Mediul de programare BlueFish}
+\lstinputlisting[language=HTML,basicstyle=\ttfamily\tiny]{exemplu.html}
+\end{alertblock}
+
+\end{frame} 
+% ----------------------------------------------------------------------------
+% *** END of Frame >>>
+% ----------------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------------
+% *** Frame <<<
+% ----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Exemplu de cod \^{i}n Java}
+
+\begin{alertblock}{Mediul de programare Eclipse}
+\lstinputlisting[language=JAVA,basicstyle=\ttfamily\tiny]{exemplu.java}
+\end{alertblock}
+
+\end{frame} 
+% ----------------------------------------------------------------------------
+% *** END of Frame >>>
+% ----------------------------------------------------------------------------
+
+\section{\^{I}ncheiere}
+\subsection{\^{I}ntreb\u{a}ri}
+
+% ----------------------------------------------------------------------------
+% *** Frame <<<
+% ----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{\^{I}ntreb\u{a}ri?!?}
+
+\end{frame} 
+% ----------------------------------------------------------------------------
+% *** END of Frame >>>
+% ----------------------------------------------------------------------------
+
+\subsection{Contacte}
+
+% ----------------------------------------------------------------------------
+% *** Frame <<<
+% ----------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Contacte}
+
+\begin{itemize}
+    \item Pagina grupului de utilizatori Linux din Sibiu \url{http://sblug.ro/}
+    \item Pagina proiectului Open High School \url{http://school.sblug.ro/}
+    \item Adres\u{a} email pentru contact \\* \href{mailto:salut@sblug.ro}{salut@sblug.ro}
+\end{itemize}
+
+\end{frame} 
+% ----------------------------------------------------------------------------
+% *** END of Frame >>>
+% ----------------------------------------------------------------------------
+
+
+\end{document}
