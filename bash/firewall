@@ -1,0 +1,42 @@
+#!/bin/bash
+
+IFNET="eth0"
+IPNET="0.0.0.0"
+SERVICII="http https smtp"
+
+if [ "$1" = "start" ]; then
+	echo "Starting firewall..."
+	
+	iptables -P INPUT DROP
+	iptables -A INPUT -i ! ${IFNET} -j ACCEPT
+	iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+	iptables -A INPUT -p icmp -j ACCEPT
+	iptables -A OUTPUT -p icmp -j ACCEPT
+
+	for i in ${SERVICII}; do
+		iptables -A INPUT -p tcp --dport ${i} -m state --state NEW -j ACCEPT
+	done
+
+	# NAT
+	iptables -t nat -A POSTROUTING -s 0.0.0.0/24 -o eth0 -j SNAT --to $IPNET
+
+	iptables -t nat -A PREROUTING -p TCP -d $IPNET --dport 80 -j DNAT --to-destination 0.0.0.0:80
+
+	iptables -I INPUT 5 -m limit --limit 5/min -j LOG --log-prefix "iptables denied: " --log-level 7
+
+fi # end if start
+
+if [ "$1" = "stop" ]; then
+	echo "Bringing down firewall..."
+
+	iptables -F
+	iptables -X
+	iptables -t nat -F
+	iptables -t nat -X
+	iptables -t mangle -F
+	iptables -t mangle -X
+	iptables -P INPUT ACCEPT
+	iptables -P FORWARD ACCEPT
+	iptables -P OUTPUT ACCEPT
+
+fi # end if stop

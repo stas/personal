@@ -1,5 +1,4 @@
 #! /bin/bash 
-# Script-ul creaza fisiere vhost pentru apache cu proxy!
 TARGETDIR="/etc/apache2/sites-available"
 
 function make_vhost
@@ -26,20 +25,18 @@ _EOF_
 }
 
 if [ -z "$1" ]; then
-	echo "Usage: proxyup.sh domainname.tld target-domain-ip"
+	echo "Usage: $0 domainname.tld target-domain-ip"
 	exit 0
 fi
 if [ -z "$2" ]; then
-	echo "Usage: proxyup.sh domainname.tld target-domain-ip"
+	echo "Usage: $0 domainname.tld target-domain-ip"
 	exit 0
 else
-	echo "-== Setting up vhost ==-"
-
 	DOMAIN=$1
 	IP=$2
-	TARGET=$TARGETDIR/proxy_for-$DOMAIN
+	TARGET=$TARGETDIR/$DOMAIN
 
-	echo "Setting up files for $DOMAIN"
+	echo "Setting up vhost for $DOMAIN..."
 
 	if [ -f $TARGET ]; then
 		echo "Error: vhost already exists in $TARGETDIR! Exiting..."
@@ -48,9 +45,7 @@ else
 		make_vhost > $TARGET
 	fi
 
-	echo "	$TARGETDIR/proxy_for-$DOMAIN"
-	echo "	Enable vhost, then reload apache after all!"
-	echo "	Finished setting up files for $DOMAIN."
-	echo "-== Done! ==-"
+	echo "Enable vhost and reload apache after."
+	echo "Done."
 fi
 exit

@@ -1,5 +1,4 @@
 #! /bin/bash 
-# Script-ul creaza fisiere vhost pentru apache!
 TARGETDIR="/etc/apache2/sites-available"
 LOGSDIR="/var/log/apache2"
 DOCROOT="/var/www"
@@ -44,16 +43,14 @@ _EOF_
 }
 
 if [ -z "$1" ]; then
-	echo "Usage: siteup.sh domainname.tld"
+	echo "Usage: $0 domainname.tld"
 	exit 0
 else
-	echo "-== Setting up vhost ==-"
-
 	DOMAIN=$1
-	TARGET=$TARGETDIR/vhost_for-$DOMAIN
+	TARGET=$TARGETDIR/$DOMAIN
 	LOGS=$LOGSDIR/$DOMAIN
 
-	echo "Setting up files for $DOMAIN"
+	echo "Setting up vhost for $DOMAIN..."
 	
 	if [ -f $LOGS ]; then
 		echo "Error: logs already exists in $TARGETDIR! Exiting..."
@@ -68,20 +65,12 @@ else
 		mkdir -vp $DOCROOT/$DOMAIN/cgi-bin
 		mkdir -vp $LOGSDIR/$DOMAIN
 		touch $LOGSDIR/$DOMAIN/access.log 
-		echo "Created $LOGSDIR/$DOMAIN/access.log"
 		touch $LOGSDIR/$DOMAIN/error.log 
-		echo "Created $LOGSDIR/$DOMAIN/error.log"
-
 		make_index > $DOCROOT/$DOMAIN/index.html
-		echo "created $DOCROOT/$DOMAIN/index.html"
-
 		make_vhost > $TARGET
-		echo "Created $TARGET/$DOMAIN"
 	fi
 
-	echo "	$TARGETDIR/vhost_for-$DOMAIN"
-	echo "	Enable vhost, then reload apache after all!"
-	echo "	Finished setting up files for $DOMAIN."
-	echo "-== Done! ==-"
+	echo "Enable vhost and reload apache after."
+	echo "Done."
 fi
 exit
